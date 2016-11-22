@@ -1,0 +1,6 @@
+class PrintService {
+
+	def print() {
+
+	}
+}
