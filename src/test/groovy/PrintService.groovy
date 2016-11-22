@@ -1,6 +1,6 @@
 class PrintService {
 
-	def print() {
+	def print(order) {
 
 	}
 }
