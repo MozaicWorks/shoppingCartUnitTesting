@@ -2,6 +2,7 @@ class OrderService {
 
 	def printService
 	def discountService
+	def dateService
 
 	/**
 	 * creates the order for the given shopping cart
@@ -11,7 +12,7 @@ class OrderService {
 	 */
 	def createOrder(shoppingCart) {
 		if (!shoppingCart.products || shoppingCart.products.isEmpty()) return
-		def order = new Order(products: shoppingCart.products,
+		def order = new Order(products: shoppingCart.products, createdDate: dateService.today(),
 				totalToPay: shoppingCart.products.price.sum()? shoppingCart.products.price.sum() : 0)
 		if (order.totalToPay > 0) {
 			order.totalToPay = order.totalToPay > 100 ? order.totalToPay : (order.totalToPay + Shipping.cost)
